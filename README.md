@@ -1,7 +1,7 @@
-# uriHW14MVCBlog
-uri bootcamp HW 14 Model-View-Controller Sequelize Mustachhe Blog Posts MJS 3.5.24
+# uriHW14MVCBlog  
+uri bootcamp HW 14 Model-View-Controller Sequelize Mustache Blog Posts MJS 3.5.24  
 Michael Sheliga - This repo is for the University of Richmond (URI) coding bootcamp.  
-Starter Code from: No started code for this project. 
+Starter Code from: No started code for this project.  
 
 ## Link to Repo, Screenshot(s) and/or Video(s)  
 Link to GitHub Repo: https://github.com/msheliga1/uriHW14MVCBlog      
@@ -48,11 +48,13 @@ Use node, SQL and sequalize to create a back-end for an e-commerce site.
          Do "npm install inquirer@8.2.4" (with old version) to avoid require error.
          Do "npm install mySQL2", etc. 
     Commit and push files back to gitHub/branch. (For multi-programming: Issue pull request, approve, merge).  
-    Deploy code 
+    Deploy code  
         - On gitHub (Settings...CodeAndAnimation->Pages on left, GitHub Pages->Branch->main, save)  
             Deployed code name always msheliga1/github.io/RepoName !!  
-        - OR Deploy or Heroku
-    Make Sure it Works   
+        - OR Deploy to Heroku
+    Test: Verify it Works
+        - Jest one possibility
+        - Use Insomnia (or Postman) to test all API routes.   
     Insert Screencastify (Chrome) Video and/or Screenshot X2 of deployment into readme file. 
   
 ## Tools and Technologies Used   
@@ -69,14 +71,14 @@ Use node, SQL and sequalize to create a back-end for an e-commerce site.
         express - ORM  
         sequelize - avoid rewriting common SQL queries
         express-handlebars - for the front end
-    mySQL - install is from the DEVIL!
+    mySQL - Install is from the DEVIL!  (Windows 10)
     SQL - Standard Query Language 
     Insomnia - Used for testing routes
     Agile - Try to assign a little work at a time.   
 
 ## Acceptance Criteria   
 -----------------------   
-SQL DB with Users, BlogPosts and   
+SQL DB with Users, BlogPosts and Comments  
 
 Express.js API - add my db name, username, and password to environment variables
 Enter schema and seed commands
@@ -84,30 +86,41 @@ Enter schema and seed commands
     - npm run seed OR node seeds\index.js (from Develop dir using cmd tool)
 Connect to a database using Sequelize  
 
-Invoke the application => server is started and the Sequelize models are synced to the MySQL database
+Invoke  Sequelize models are synced to the MySQL database
 Insomnia Core API GET routes for all categories, products, or tags - data displayed in a formatted JSON
 Insomnia Core API GET by ID routes for one category, product, or tag - data displayed in a formatted JSON
-Insomnia Core API POST, PUT, and DELETE routes - successfully create, update, and delete db data 
-  
-Tables  - It took me over a (EF(F$)) ING hour to figure out that YOU intend ME to create these.   
-Why can't you get someone who can create clear, complete, concise directions. IT'S LIKE THIS EVERY HW!  
+Insomnia Core API POST, PUT, and DELETE routes - successfully create, update, and delete db data the application => server is started and the
+
+Visit the site: taken to homepage: includes blog posts; nav links for homepage, dashboard and log in
+When I click on XXXx => taken to YYY
+Homepage option => homepage
+Other links in the navbar: Prompted to either sign up or sign in
+Choose to sign up => prompted to create username - password
+Sign-up button => user credentials are saved and I am logged into the site
+Sign in => prompted to enter my username and password
+WHEN I am signed in THEN I see navigation links for the homepage, the dashboard, and option to log out
+Homepage nav link => homepage and with existing blog posts = include post title and date created )(name?)
+Existing blog post => post title, contents, creator’s username, and date created and option to leave a comment
+Save comment => comment, creator and data saved and post updated
+Dashboard nav link => dashboard with my blog posts and the option to add a new blog post
+Add new post => prompted to enter both a title and contents for my blog post
+Create new post => title and contents saved - taken back to an updated dashboard with my new blog post
+An existing dashboard posts => delete or update my post and taken back to an updated dashboard
+Logout navbar option => signed out of the site
+Idle for more than a set time => THEN cam view posts and comments but need to log in before add, update, or delete posts
+
+Tables  - All have:  id Integer     NOT null    primary key    auto increment
 -------------  
-Category
-    id Integer     NOT null    primary key    auto increment
-    category_name    String    NOT null
-Product
-    id    Integer    NOT null    primary key    auto increment
-    product_name    String    NOT null
-    price    Decimal    NOT null   Validates that the value is a decimal
-    stock    Integer    NOT null    default value 10    Validates value is numeric
-    category_id    Integer    References the category model's id
-Tag
-    id    Integer    Doesn't allow null values    Set as primary key    Uses auto increment
-    tag_name    String
-ProductTag
-    id    Integer    Doesn't allow null values    Set as primary key    Uses auto increment
-    product_id    Integer    References the product model's id
-    tag_id    Integer    References the tag model's id
-
-
-
+User  
+    Username  
+    Password  
+BlogPost  
+    title       string  NOT NULL  
+    contents    string  NOT NULL  
+    created     date    NOT NULL  
+    user        fk      NOT NULL  
+Comment  
+    contents String     NOT NULL  
+    created     date    NOT NULL  
+    user        fk      NOT NULL  
+    blogPost    fk      NOT NULL  

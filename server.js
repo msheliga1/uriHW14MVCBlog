@@ -27,5 +27,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('MJS Blog post server now listening on port {PORT}'));
+  app.listen(PORT, () => console.log(`MJS Blog Post server now listening on port ${PORT}`));
 });

@@ -13,9 +13,9 @@ const router = require('express').Router();
 
 // To make getting something - anything to work put a route here!! 
 // And comment out everything else. 
-router.get('/', async (req, res) => {
+router.get('/root', async (req, res) => {
     try {
-        res.status(200).json("MJS home route found!");
+        res.status(200).json("MJS root route in controller/index found! This is PROGRESS believe it or not!");
     } catch (err) {
       res.status(500).json(err);
     }

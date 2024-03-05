@@ -110,14 +110,39 @@ router.get('/project/:id', async (req, res) => {
   }
 });  // end get /project/:id
 
-// Use withAuth middleware to prevent access to route
+// MJS 3.4.24 - profile (dashboard) should get only posts by logged in user.
+// Use withAuth middleware to prevent access to route if not logged in
 router.get('/profile', withAuth, async (req, res) => {
   try {
+    console.log("Getting /profile (dashboard) "); 
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],   // get all posts for now. 
+    });
+    console.log("Got userData by findByPk ", req.session.user_id, " ", userData.name);
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Use withAuth middleware to prevent access to route
+router.get('/profileOrig', withAuth, async (req, res) => {
+  try {
+    console.log("Getting /profile (dashboard) "); 
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
     });
+    console.log("Got userData by findByPk ", req.session.user_id, " ", userData.name);
 
     const user = userData.get({ plain: true });
 

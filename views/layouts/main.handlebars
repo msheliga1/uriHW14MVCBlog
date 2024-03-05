@@ -17,14 +17,11 @@
         <a href="/">Mike Sheliga's Tech Blogs</a>
       </h1>
       <nav>
-        <button class="no-button" id="home">Home</button>
-        <a href="/homepage">Home</a>
-    
-        <button class="no-button" id="dashboard">Dashboard</button>
-        <a href="/profile">Dashboard</a>
+        <a href="/">Home</a> | 
+        <a href="/profile">Dashboard</a> | 
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <!-- <a href="/profile">profile</a> | Already have this above -->
         <button class="no-button" id="logout">Logout</button>
         {{else}}
         <a href="/login">Login or Sign Up</a>

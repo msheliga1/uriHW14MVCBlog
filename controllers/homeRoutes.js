@@ -23,9 +23,9 @@ router.get('/xx', async (req, res) => {
 router.get('/blank', (req, res) => {
     console.info("MJS /blank route before try found.");
     try {
-        console.log("Getting / route. ");
-        console.info("MJS / route found.");
-        res.status(200).json('MJS / route found!');
+        console.log("Getting /blank route. ");
+        console.info("MJS /blank route found.");
+        res.status(200).json('MJS /blank route found!');
     } catch (err) {
       res.status(502).json(err);
     }
@@ -38,17 +38,20 @@ const tryUs = "Us";
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    console.log("Getting / route.")
+    // This seems to lead to an sequelizeEagerLoadingError. MJS 3.4
+    /* const projectData = await Project.findAll({
       include: [
         {
           model: User,
           attributes: ['name'],
         },
       ],
-    });
+    }); */
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    // const projects = projectData.map((project) => project.get({ plain: true }));
+    const projects = [];  // see if this gets rid of error.
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 

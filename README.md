@@ -30,7 +30,7 @@ Use node, SQL and sequalize to create a back-end for an e-commerce site.
         -- Create a new, totally blank repo in GitHub  
         -- Clone the starter repo (under the hwXX directory) to your local machine  
         -- Set the remote path: git remote add <ori> <HTTPS path to remove>   
-            -- Be 100% sure NOT to use the SSH link. Use the HTTPS lank!  
+            -- Be 100% sure NOT to use the SSH link. Use the HTTPS link!  
         -- Push the local repo to gitHub: git push ori main   
     OR ... Copy directories and sample files from prior project (or create from scratch).  
         -- No starter code. No need for copying one file at a time via command line.  
@@ -57,7 +57,7 @@ Use node, SQL and sequalize to create a back-end for an e-commerce site.
     Deploy code  
         - On gitHub (Settings...CodeAndAnimation->Pages on left, GitHub Pages->Branch->main, save)  
             Deployed code name always msheliga1/github.io/RepoName !!  
-        - OR Deploy to Heroku
+        - OR Deploy to Heroku. See https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql
     Test: Verify it Works
         - Jest one possibility
         - Use Insomnia (or Postman) to test all API routes.   
@@ -120,7 +120,7 @@ Tables  - All have:  id Integer     NOT null    primary key    auto increment
 User  
     Username  
     Password  
-BlogPost  
+BlogPost (Post)
     title       string  NOT NULL  
     contents    string  NOT NULL  
     created     date    NOT NULL  

@@ -36,11 +36,10 @@ router.get('/blank', (req, res) => {
 
 // Cant get the numbers in the stack trace to change from 79:7 
 const tryYou = 'Hola';
-const tryUs = "Us";
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and JOIN with user data
     console.log("Getting / route.")
     // This seems to lead to an sequelizeEagerLoadingError. MJS 3.4
     const postData = await Post.findAll({

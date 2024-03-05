@@ -18,8 +18,10 @@ router.get('/xx', async (req, res) => {
 
 // Cant even get this to print out ... seems like we're not even getting here.
 // Even tried getting rid of asynch since no await inside.
-router.get('/', (req, res) => {
-    console.info("MJS / route before try found.");
+// Problem was in server.js (missing many lines including handlebars), 
+// along with homeroutes not being inclueded in controllers/index.js
+router.get('/blank', (req, res) => {
+    console.info("MJS /blank route before try found.");
     try {
         console.log("Getting / route. ");
         console.info("MJS / route found.");
@@ -33,7 +35,7 @@ router.get('/', (req, res) => {
 const tryYou = 'Hola';
 const tryUs = "Us";
 
-router.get('/SaveThisForLater', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const projectData = await Project.findAll({

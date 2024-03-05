@@ -4,12 +4,13 @@ console.log("Starting controller/index.js ");
 const router = require('express').Router();
 
 // Also seem to be missing homepage route here!! At night 3.4.24.
+const homeRoutes = require('./homeRoutes');
+router.use('/', homeRoutes);
 
 // Import the index.js from 'api' folder
-// const apiRoutes = require('./api');
-
+const apiRoutes = require('./api');
 // When a request is made to the /api route, it will be directed to the index.js in the 'api' folder.
-// router.use('/api', apiRoutes);
+router.use('/api', apiRoutes);
 
 // To make getting something - anything to work put a route here!! 
 // And comment out everything else. 

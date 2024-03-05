@@ -4,7 +4,13 @@ Michael Sheliga - This repo is for the University of Richmond (URI) coding bootc
 Starter Code from: No started code for this project.  
 
 ## Link to Repo, Screenshot(s) and/or Video(s)  
-Link to GitHub Repo: https://github.com/msheliga1/uriHW14MVCBlog      
+Link to GitHub Repo that works best: https://github.com/msheliga1/uriHW14MVCBlog   
+Some routes actually work in the this repo, but none have updated links (aka still using Act 14-28 data).  
+But there were many, many failures as well....    
+A Try at copying entire other repo (to start with) that also failed: https://github.com/msheliga1/uriHW14MVCBlogs (note the s at the end).   
+And a 3rd try: https://github.com/msheliga1/uriHW14MVCBlogPost.  I think this one wouldn't even upload correctly.     
+Heroku Page: https://dry-ravine-91710-0747d4829490.herokuapp.com/   
+
 Link to Video on Google Drive:  xxxxxxxxxx  
 <!---  Link to deployed github.io site. https://msheliga1.github.io/uriHW9NodeReadmeGen --->  
 <!-- Link to Video on GitHub [Link](./examples/hw10LogoGenSheliga.webm)   Note that this video may be too large to play in  GitHub, so you will need to download and play from your computer. WindowsMediaPlayer worked for me.  -->

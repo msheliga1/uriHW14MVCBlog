@@ -1,4 +1,4 @@
-// MJS 3.4.24 - From Act 14-28 mp - controllers/index.js file. Mainly points to /api
+// MJS 3.4.24 - From Act 14-28 mp - controllers/index.js file. Points to /api folder and /homeRoutes file.
 // Import just the router express
 console.log("Starting controller/index.js ");
 const router = require('express').Router();

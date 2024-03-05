@@ -1,7 +1,10 @@
 // MJS 3.4.24 - From uri act 14-28 mp - controller/homeRoutes.js
+// Routes - all GETS: Sample for testing: Get /xx, get /blank 
+// get /,  /post/:id, /project/:id, /profile, /login
+
 const router = require('express').Router();
 // const { User } = require('../models');
-const { Project, User } = require('../models');
+const { Project, Post, User } = require('../models');
 
 const withAuth = require('../utils/auth');
 const tryMe = 'Hola';
@@ -40,22 +43,22 @@ router.get('/', async (req, res) => {
     // Get all projects and JOIN with user data
     console.log("Getting / route.")
     // This seems to lead to an sequelizeEagerLoadingError. MJS 3.4
-    /* const projectData = await Project.findAll({
+    const postData = await Post.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['name'],  // exclude users password!! for sure. 
         },
       ],
-    }); */
+    }); 
 
     // Serialize data so the template can read it
-    // const projects = projectData.map((project) => project.get({ plain: true }));
-    const projects = [];  // see if this gets rid of error.
+    const posts = postData.map((post) => post.get({ plain: true }));
+    // const projects = [];  // see if this gets rid of error.
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      posts, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -63,6 +66,29 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      ...project,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});  // end get /post/:id
+
+// Legacy get /project/:id route.
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -83,7 +109,7 @@ router.get('/project/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+});  // end get /project/:id
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -91,7 +117,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Post }],
     });
 
     const user = userData.get({ plain: true });

@@ -2,7 +2,7 @@
   "name": "urihw14mvcblog",
   "version": "1.0.0",
   "description": "uri bootcamp HW 14 Model-View-Controller Sequelize Mustache Blog Posts MJS 3.5.24  \r Michael Sheliga - This repo is for the University of Richmond (URI) coding bootcamp.  \r Starter Code from: No started code for this project.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",

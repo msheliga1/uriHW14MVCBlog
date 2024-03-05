@@ -9,6 +9,11 @@ header, .project:not(:last-child) {
     border: 3px solid #056605;
 }
 
+/* MJS 3.24.24 - for post created by */
+.smallFont {
+  font-size: small;
+}
+
 .no-button {
   background: none;
   border: none;

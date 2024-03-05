@@ -3,12 +3,12 @@
 <!-- <div class="row mb-4 bg-dark text-light post"> MJS homepage.handlebars file. </div> -->
 {{#each posts as |post| }}
 <div class="row m-3 p-1 postBorder post">  
-  <div class="col-md-7">
+  <div class="col-md-9">
     <h4> {{post.title}} 
     </h4>
   </div>
 
-  <div class="col-md-5">
+  <div class="col-md-3">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       <!-- {{{get_emoji}}} -->
@@ -16,9 +16,8 @@
     </h2>
       <!--  <p>     <span for="img" aria-label="money">💲</span> --> 
       <!-- Pass needed_funding value to the helper function -->
-      <!-- <span class="dollar-amount">{{format_amount post.needed_funding}}</span>     </p> -->
-    
-    <p class="small">Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
+      <!-- <span class="dollar-amount">{{format_amount post.needed_funding}}</span>     </p> -->    
+    <p class="smallFont">Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
   <div class="col-md-12">
     <p>

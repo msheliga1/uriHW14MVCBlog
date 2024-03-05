@@ -107,11 +107,11 @@ Sign in => prompted to enter my username and password
 WHEN I am signed in THEN I see navigation links for the homepage, the dashboard, and option to log out
 Homepage nav link => homepage and with existing blog posts = include post title and date created )(name?)
 Existing blog post => post title, contents, creator’s username, and date created and option to leave a comment
-Save comment => comment, creator and data saved and post updated
-Dashboard nav link => dashboard with my blog posts and the option to add a new blog post
-Add new post => prompted to enter both a title and contents for my blog post
-Create new post => title and contents saved - taken back to an updated dashboard with my new blog post
-An existing dashboard posts => delete or update my post and taken back to an updated dashboard
+  Save comment => comment, creator and data saved and post updated
+Dashboard (my posts) nav link => dashboard with my blog posts and option to add a new blog post
+  Add new post => prompted to enter both a title and contents for my blog post
+  Create new post => title and contents saved - taken back to an updated dashboard with my new blog post
+  An existing dashboard posts => delete or update my post and taken back to an updated dashboard
 Logout navbar option => signed out of the site
 Idle for more than a set time => THEN cam view posts and comments but need to log in before add, update, or delete posts
 

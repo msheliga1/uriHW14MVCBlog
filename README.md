@@ -1,15 +1,15 @@
 # uriHW14MVCBlog  
 uri bootcamp HW 14 Model-View-Controller Sequelize Mustache Blog Posts MJS 3.5.24  
 Michael Sheliga - This repo is for the University of Richmond (URI) coding bootcamp.  
-Starter Code from: No started code for this project.  
+Starter Code from: None, but many files modified from uri act 14-28 mp.  
 
 ## Link to Repo, Screenshot(s) and/or Video(s)  
-Link to GitHub Repo that works best: https://github.com/msheliga1/uriHW14MVCBlog   
-Some routes actually work in the this repo, but none have updated links (aka still using Act 14-28 data).  
-But there were many, many failures as well....    
+Link to main GitHub Repo: https://github.com/msheliga1/uriHW14MVCBlog   
+The /, /profile and /login routes work in the this repo. User emails are ler@g.com, ami@g.com and sal@g.com. Passwords are "ff".  
+But there were many, many failures as well ....    
 A Try at copying entire other repo (to start with) that also failed: https://github.com/msheliga1/uriHW14MVCBlogs (note the s at the end).   
 And a 3rd try: https://github.com/msheliga1/uriHW14MVCBlogPost.  I think this one wouldn't even upload correctly.     
-Heroku Page: https://dry-ravine-91710-0747d4829490.herokuapp.com/   
+Heroku Page: https://dry-ravine-91710-0747d4829490.herokuapp.com/   As of tonite 3.5.24 this now has seed data!! I really wish this had been mentioned in the heroku guide.  
 
 Link to Video on Google Drive:  xxxxxxxxxx  
 <!---  Link to deployed github.io site. https://msheliga1.github.io/uriHW9NodeReadmeGen --->  
